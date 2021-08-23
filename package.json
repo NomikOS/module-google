@@ -1,6 +1,6 @@
 {
   "name": "@nomikos/module-google",
-  "version": "1.0.30",
+  "version": "1.0.31",
   "description": "Servicios de FCM y GCE",
   "author": {
     "name": "Igor Parra Bastias",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/NomikOS/module-comm"
+    "url": "https://github.com/NomikOS/module-google"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/nomikos"
