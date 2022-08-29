@@ -84,27 +84,22 @@ function _connectDatabase({ knexPgConfig, databaseSecret }) {
     config.connection.host = process.env.DB_HOST
   }
 
-  console.warn({ 'LOGGING config.connection.host': config.connection.host })
-
   if (config.connection.password === '-secret-') {
     if (!databaseSecret) {
       throw new Error('DB databaseSecret data missing')
     }
 
+    // knex puede manejar un callback async para connection
+    // para leer secret
     config.connection = async () => {
       const password = await _secret({
         secretId: databaseSecret
       })
-
-      console.warn({ 'LOGGING config.connection.password': 'usando secret' })
-
       const connectionConfig = {
         ...knexPgConfig.connection,
         host: host,
         password: password
       }
-
-      console.warn({ 'LOGGING connectionConfig': connectionConfig })
 
       return connectionConfig
     }

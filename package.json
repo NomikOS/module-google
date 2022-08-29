@@ -1,6 +1,6 @@
 {
   "name": "@nomikos/module-google",
-  "version": "1.0.31",
+  "version": "1.0.35",
   "description": "Servicios de FCM y GCE",
   "author": {
     "name": "Igor Parra Bastias",
